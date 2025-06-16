@@ -1,0 +1,7 @@
+django==3.2.20
+pyinstaller==5.9.0
+pillow==9.5.0
+django-widget-tweaks==1.4.0
+arabic-reshaper==2.1.4
+python-bidi==0.4.2
+xlsxwriter==3.2.2 

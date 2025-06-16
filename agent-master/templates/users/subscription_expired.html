@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}انتهاء الاشتراك{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <h2 class="text-center mb-4">انتهاء الاشتراك</h2>
+    <div class="alert alert-warning">
+        <p>عذراً، لقد انتهت صلاحية اشتراكك. يرجى التواصل مع الإدارة لتجديد الاشتراك.</p>
+    </div>
+    <div class="text-center mt-3">
+        <a href="{% url 'home' %}" class="btn btn-primary">العودة للرئيسية</a>
+    </div>
+</div>
+{% endblock %} 
