@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,7 @@ load_dotenv()
 SECRET_KEY = 'django-insecure-p$+q5x@np7#zlqt15%c)(n4)2f7p*3+jgx8*z@59f@q-@i(&+%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -87,27 +87,16 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASE_ENGINE = os.getenv('DATABASE_ENGINE', 'sqlite3')
-
-if DATABASE_ENGINE == 'postgresql':
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DB_NAME', 'your_db_name'),
-            'USER': os.getenv('DB_USER', 'your_db_user'),
-            'PASSWORD': os.getenv('DB_PASSWORD', 'your_db_password'),
-            'HOST': os.getenv('DB_HOST', 'localhost'),
-            'PORT': os.getenv('DB_PORT', '5432'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'agentdb_ffui',
+        'USER': 'agentdb_ffui_user',
+        'PASSWORD': 'lw6gxYTsdBvqDv6AdJQ7ijrHKR8WnGit',
+        'HOST': 'dpg-d18n11mmcj7s73a6o8mg-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

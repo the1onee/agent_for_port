@@ -10,7 +10,7 @@
                     <div class="stat-card-value" id="total-orders">{{ total_orders }}</div>
                     <div class="stat-card-progress">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{ active_orders|default:0|divisibleby:total_orders|default:1|floatformat:0 }}%" aria-valuenow="{{ active_orders|default:0 }}" aria-valuemin="0" aria-valuemax="{{ total_orders|default:1 }}"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ active_orders }}%" aria-valuenow="{{ active_orders }}" aria-valuemin="0" aria-valuemax="{{ total_orders }}"></div>
                         </div>
                         <div class="stat-card-subtitle"><span id="active-orders">{{ active_orders|default:0 }}</span> نشط من أصل {{ total_orders|default:0 }}</div>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="stat-card-value" id="total-containers">{{ containers_report.total }}</div>
                     <div class="stat-card-progress">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{ containers_report.assigned|default:0|divisibleby:containers_report.total|default:1|floatformat:0 }}%" aria-valuenow="{{ containers_report.assigned|default:0 }}" aria-valuemin="0" aria-valuemax="{{ containers_report.total|default:1 }}"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ containers_report.percent }}%" aria-valuenow="{{ containers_report.assigned }}" aria-valuemin="0" aria-valuemax="{{ containers_report.total }}"></div>
                         </div>
                         <div class="stat-card-subtitle"><span id="assigned-containers">{{ containers_report.assigned }}</span> مرتبط من أصل {{ containers_report.total }}</div>
                     </div>
@@ -85,7 +85,7 @@
                     <div class="stat-card-value" id="total-trucks">{{ trucks_report.total }}</div>
                     <div class="stat-card-progress">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: {{ trucks_report.active|default:0|divisibleby:trucks_report.total|default:1|floatformat:0 }}%" aria-valuenow="{{ trucks_report.active|default:0 }}" aria-valuemin="0" aria-valuemax="{{ trucks_report.total|default:1 }}"></div>
+                            <div class="progress-bar" role="progressbar" style="width: {{ trucks_report.percent }}%" aria-valuenow="{{ trucks_report.active }}" aria-valuemin="0" aria-valuemax="{{ trucks_report.total }}"></div>
                         </div>
                         <div class="stat-card-subtitle"><span id="active-trucks">{{ trucks_report.active }}</span> نشط من أصل {{ trucks_report.total }}</div>
                     </div>
